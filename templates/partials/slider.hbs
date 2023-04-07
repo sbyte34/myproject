@@ -1,0 +1,89 @@
+<section class="bg-light" id="courses">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="intro">
+                    <h1>Our courses</h1>
+                    <p class="mx-auto">Description</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="owl-slider">
+        <div id="carousel" class="owl-carousel">
+            {{#each slides}}
+            <div class="item">
+
+                <div class="card">
+                    <img class="card-img-top" src="{{this.imgURl}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.title}}</h5>
+                        <p class="card-text">{{this.subTitle}}</p>
+                        <div>
+                            <span style="font-size:20px; text-align:right;">
+                                <h6><a href="/details/{{this.id}}" style="text-decoration:none;">Learn more</a>&nbsp;&nbsp;
+                                    {{!-- <a href="#" style="text-decoration:none;">Enroll</a> --}}
+                                     <a href="#exampleModal" data-bs-toggle="modal" style="text-decoration:none;">Enroll</a>
+                                </h6>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
+    {{!-- seemore button code --}}
+    <div class="position-relative">
+        <div class="position-absolute bottom-10 start-50 translate-middle-x">
+            <!-- <button type="button" class="btn btn-brand"><a herf="">See more</a></button> -->
+            {{!-- <a href="/views/partials/courseCard.hbs" class="btn btn-brand" role="button">See
+                more</a> --}}
+            <a href="#myModal" data-bs-toggle="modal" 
+                    class="btn btn-brand ms-lg-3">See More</a>
+</div>
+    </div>
+
+    </div>
+</section>
+{{!-- modal card details --}}
+   <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" style="max-width:1290px;" >
+            <div class="modal-content">
+                    <h1 style="text-align:center;">COURSES</h1>
+                        <div class="card-center mt-2 modalcard">
+                        <div class="col-xs-12 col-sm-12 col-md-12  item" id="subcard">
+                            {{#each slides}}
+                            <div class="card col-lg-2">
+                                <img class="card-img-top" src="{{this.imgURl}}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{this.title}}</h5>
+                                    <p class="card-text">{{this.subTitle}}</p>
+                                    <div>
+                                        <span style="font-size:20px; text-align:right;">
+                                            <h6>
+                                                {{!-- <a href="/" style="text-decoration:none;">
+                                                <img src="static/images/backbutton.png" style="height:15px; width:15px; left:1px">Back</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --}}
+                                                <a href="./details" style="text-decoration:none;">Learn
+                                                    more</a>&nbsp;&nbsp;
+                                                <a href="#exampleModal" data-bs-toggle="modal" style="text-decoration:none;">Enroll</a>
+                                            </h6>
+                                        </span>
+                                        <span class="backbtn" style="font-size:20px; text-align:right;">
+                                            <h6>
+                                                <a href="/" style="text-decoration:none;">
+                                                <img src="static/images/backbutton.png" style="height:15px; width:15px; left:1px">Back</a>
+                                            </h6>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+            </div>
+          
+        </div>
+    </div>
