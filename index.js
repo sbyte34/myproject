@@ -2,16 +2,16 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
-require("../db/conn");
-const routes = require("../routes/router");
+require("./db/conn");
+const routes = require("./routes/router");
 const hbs=require("hbs");
 const app = express();
-const sliders=require("../models/Sliderschema");
-const t_mols=require("../models/detailsschema");
-const branchs=require("../models/branch");
-const kalyans=require("../models/kalyan");
-const dombivlis=require("../models/dombivli");
-const thanes=require("../models/thane");
+const sliders=require("./models/Sliderschema");
+const t_mols=require("./models/detailsschema");
+const branchs=require("./models/branch");
+const kalyans=require("./models/kalyan");
+const dombivlis=require("./models/dombivli");
+const thanes=require("./models/thane");
 
 
 
