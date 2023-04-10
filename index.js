@@ -2,16 +2,16 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
-require("../db/conn");
-const routes = require("../routes/router");
+require("./db/conn");
+const routes = require("./routes/router");
 const hbs=require("hbs");
 const app = express();
-const sliders=require("../models/Sliderschema");
-const t_mols=require("../models/detailsschema");
-const branchs=require("../models/branch");
-const kalyans=require("../models/kalyan");
-const dombivlis=require("../models/dombivli");
-const thanes=require("../models/thane");
+const sliders=require("./models/Sliderschema");
+const t_mols=require("./models/detailsschema");
+const branchs=require("./models/branch");
+const kalyans=require("./models/kalyan");
+const dombivlis=require("./models/dombivli");
+const thanes=require("./models/thane");
 
 
 
@@ -20,15 +20,15 @@ const thanes=require("../models/thane");
 
 
 // setting the path
-const staticpath=path.join(__dirname,"../public");
-const templetepath=path.join(__dirname,"../templates/views");
-const partialpath=path.join(__dirname,"../templates/partials");
+const staticpath=path.join(__dirname,"./public");
+const templetepath=path.join(__dirname,"./templates/views");
+const partialpath=path.join(__dirname,"./templates/partials");
 
 //middleware
-app.use('/css', express.static(path.join(__dirname, "../node_modules/bootstrap/dist/css")));
+app.use('/css', express.static(path.join(__dirname, "./node_modules/bootstrap/dist/css")));
 
-app.use('/js', express.static(path.join(__dirname, "../node_modules/bootstrap/dist/js")));
-app.use('/jq', express.static(path.join(__dirname, "../node_modules/jquery/dist")));
+app.use('/js', express.static(path.join(__dirname, "./node_modules/bootstrap/dist/js")));
+app.use('/jq', express.static(path.join(__dirname, "./node_modules/jquery/dist")));
 app.use('/static',express.static("public"));
 app.use("/",routes);
 app.use(express.static(staticpath))
