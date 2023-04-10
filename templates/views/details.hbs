@@ -37,7 +37,7 @@
                           <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                           <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
                         </svg>&nbsp;&nbsp;&nbsp;&nbsp;
-                        what is app Development
+                        what is {{this.title}}
                       </a>
                     </div>
                     <div id="collapseOne" class="collapse col-lg-12" data-bs-parent="#accordion">
@@ -46,7 +46,7 @@
                     </div>
                   </div>
                   <div class="card" style="border:none;">
-                    <div class="card-header">
+                    <div class="card-header" id="topicbtn">
                       <a data-bs-toggle="collapse" href="#collapseTwo" style="text-decoration:none;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                           class="bi bi-plus-circle" viewBox="0 0 16 16">
@@ -58,14 +58,10 @@
                       </a>
                     </div>
                     <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
-                      {{!-- <div class="card-body">{{this.syllabus}}</div> --}}
-                      {{!-- <div class="card-body"> --}}
-                        {{!-- <ul type="none">
-                          {{#each }}
-                          <li>{{this.syllabus}}</li>
-                          {{/each}}
-                        </ul> --}}
-                      {{!-- </div> --}}
+                      
+                      <div class="card-body">
+                        <ul type="square" id="oneitem">{{this.syllabus}}</ul>
+                      </div>
                     </div>
                   </div>
 
@@ -100,7 +96,7 @@
                           <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                           <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
                         </svg>&nbsp;&nbsp;&nbsp;&nbsp;
-                        what is app Development
+                        what is {{this.title}}
                       </a>
                     </div>
                     <div id="collapseOne" class="collapse col-lg-12" data-bs-parent="#accordion">
@@ -121,7 +117,9 @@
                       </a>
                     </div>
                     <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
-                      <div class="card-body">{{this.syllabus}}</div>
+                      <div class="card-body">
+                          <ul type="square" id="onedata">{{this.syllabus}}</ul>
+                      </div>
                     </div>
                   </div>
 
@@ -272,58 +270,13 @@
 
       </div>
       <div class="expert-testimonial-small">
-        <div class="row" style="padding: 10px;">
-          <img src="/static/image/Manan Chavda.jpeg" class="img-circle img-responsive"><br><br>
-          <div class="comment-bubble">
-            <center>
-              <h3><strong>Manan Chavda</strong></h3>
-              <h4><strong>Software Developer at Barclays Global Services Center</strong></h4>
-            </center><br>
-            <p>"Technology is improving at speeds that are almost impossible to catch. However, the skills that industry
-              requires are aptly imparted through the internship and training program by Autodice. I appreciate the
-              experience that Ajay brings to his training sessions. <br> Autodice is definitely a 'Go-to' platform for
-              anyone who is looking to expand his/her skill sets and set the mark in the IT industry."</p>
-          </div>
-        </div>
+    
 
-        <div class="clearfix"></div><br><br>
-        <div class="row" style="padding: 10px;">
-          <img src="/static/image/Monu Shetty.jpg" class="img-circle img-responsive"><br><br>
-          <div class="comment-bubble">
-            <center>
-              <h3><strong>Monu Shetty</strong></h3>
-              <h4><strong>Co-Founder at AGS Ingenuity</strong></h4>
-            </center><br>
-            <p>"We as Industry incumbents observe a huge knowledge deficit in the Indian Educational Ecosystem. Training
-              Partners like Autodice help us in developing courses and providing training and Internships to students.
-              They are indeed the required catalyst for Institutes as well as Industries to inculcate innovation and
-              behavior of applied learning. <br>Autodice is one of our major partner to imbibe the required knowledge
-              for making the students ready to contribute on the job effectively from day one."</p>
-          </div>
-        </div>
-        <div class="clearfix"></div><br><br>
-        <div class="row" style="padding: 10px;">
-          <img src="/static/image/Radhakrishna Kamath.jpeg" class="img-circle img-responsive"><br><br>
-          <div class="comment-bubble">
-            <center>
-              <h3><strong>Radhakrishna Kamath</strong></h3>
-              <h4><strong>MS from IIT Chennai</strong></h4>
-            </center><br>
-            <p>"AutoDice is doing a great job in training students via internships while helping them get one step
-              closer to becoming Industry-ready."</p>
-          </div>
-        </div>
-        <div class="row" style="padding: 10px;">
-          <img src="/static/image/Rajendra Sabat.jpeg" class="img-circle img-responsive"><br><br>
-          <div class="comment-bubble">
-            <center>
-              <h3><strong>Rajendra Sabat</strong></h3>
-              <h4><strong>System Engineer at Infosys</strong></h4>
-            </center><br>
-            <p>"There is a huge gap between what industry expects from freshers and what our education system teaches
-              us, I think autodice is doing a great job by making students ready for what is out there."</p>
-          </div>
-        </div>
+        
+       
+        
+       
+        
       </div>
     </div>
   </div>
@@ -331,7 +284,7 @@
   --}}
   <div class="row eventsgallery eventsgallery-small" style="margin-top:30px;">
     <center>
-      <h1><strong>Glimpse of AutoDice's Courses and Workshops</strong></h1>
+      <h1><strong>Courses and Workshops</strong></h1>
     </center><br>
     <p style="text-align:center; font-size:16px; max-width:800px; margin:auto;">
       We are regularly invited by various Training institutes for sharing our Technological Expertise in the form of

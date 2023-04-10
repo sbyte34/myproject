@@ -16,7 +16,7 @@
             <div class="item">
 
                 <div class="card">
-                    <img class="card-img-top" src="{{this.imgURl}}" alt="Card image cap">
+                    <img class="card-img-top" style="height: 182px;" src="{{this.imgURl}}" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">{{this.title}}</h5>
                         <p class="card-text">{{this.subTitle}}</p>
@@ -57,7 +57,7 @@
                         <div class="col-xs-12 col-sm-12 col-md-12  item" id="subcard">
                             {{#each slides}}
                             <div class="card col-lg-2">
-                                <img class="card-img-top" src="{{this.imgURl}}" alt="Card image cap">
+                                <img class="card-img-top"src="{{this.imgURl}}" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">{{this.title}}</h5>
                                     <p class="card-text">{{this.subTitle}}</p>
@@ -66,7 +66,7 @@
                                             <h6>
                                                 {{!-- <a href="/" style="text-decoration:none;">
                                                 <img src="static/images/backbutton.png" style="height:15px; width:15px; left:1px">Back</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --}}
-                                                <a href="./details" style="text-decoration:none;">Learn
+                                                <a href="/details/{{this.id}}" style="text-decoration:none;">Learn
                                                     more</a>&nbsp;&nbsp;
                                                 <a href="#exampleModal" data-bs-toggle="modal" style="text-decoration:none;">Enroll</a>
                                             </h6>

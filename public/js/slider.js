@@ -211,6 +211,27 @@ if (!firstname||!lastname||!emailname||!contactno||!enquiry){
   $("#modify-cols-btn").attr("disabled",false);
  } 
 })
+// for (syllabus list-item code)
+
+var topic=$('#onedata').text()
+var subtopic =(topic);
+const myArray = subtopic.split(",");
+var sum=``
+for (let index = 0; index < myArray.length; index++) {
+  const element = myArray[index];
+  var data=`<li>${element}</li>`
+  sum=sum+data
+ 
+ }
+$('#onedata').html(sum)
+$('#oneitem').html(sum)
+
+
+
+
+
+
+
 
 
 
