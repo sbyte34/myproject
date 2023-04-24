@@ -18,11 +18,17 @@
               {{#each detailsPage}}
               <div class="item">
 
-                <div class="card">
-                  <img class="card-img-top" src="{{this.imgURl}}" alt="Card image cap">
+                <div class="card text-center">
+                  <img class="card-img-top mx-auto d-block" src="{{this.imgURl}}" alt="Card image cap" style=" border-radius: 50%;
+    width: calc(6rem + 4vmin);
+    height: calc(6rem + 4vmin);
+    position: relative;
+    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+    background-size: cover;
+    margin-bottom: calc(0.7rem + 0.5vmin);">
                   <div class="card-body">
                     <h5 class="card-title">{{this.title}}</h5>
-                    <p class="card-text">{{this.subTitle}}</p>
+                    <p class="card-text" style="overflow-y: scroll; max-height:160px;">{{this.subTitle}}</p>
 
                   </div>
                 </div>
@@ -38,3 +44,4 @@
 </div>
 </div>
 </section>
+

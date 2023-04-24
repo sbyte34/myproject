@@ -67,6 +67,14 @@ routes.get("/thane_branch", async (req, res) => {
     });
 });
 
+routes.get("/features", async (req, res) => {
+    const slides = await Sliderschema.find()
+     res.render("features", {
+        slides: slides,
+       
+    });
+});
+
 routes.get("/wamessage",async(req,res)=>{
     
    res.redirect('https://smartbytecomputer.com/')

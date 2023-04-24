@@ -1,202 +1,160 @@
+const reviewWrap = document.getElementById("reviewWrap");
+const leftArrow = document.getElementById("leftArrow");
+const rightArrow = document.getElementById("rightArrow");
+const imgDiv = document.getElementById("imgDiv");
+const personName = document.getElementById("personName");
+const profession = document.getElementById("profession");
+const description = document.getElementById("description");
+const surpriseMeBtn = document.getElementById("surpriseMeBtn");
+const chicken = document.querySelector(".chicken");
 
-$(document).ready(function () {
-  //Owl
-  $('.hero-slider').owlCarousel({
-      loop: true,
-      margin: 0,
-      items: 1,
-      dots: false,
-      navText: ['PREV', 'NEXT'],
-      smartSpeed: 1000,
-      autoplay: true,
-      autoplayTimeout: 7000,
-      responsive: {
-          0: {
-              nav: false,
-          },
-          768: {
-              nav: true,
-          }
-      }
-  })
+let isChickenVisible;
 
-  $('#projects-slider').owlCarousel({
-      loop: true,
-      items: 2,
-      dots: true,
-      smartSpeed: 600,
-      center: true,
-      autoplay: true,
-      autoplayTimeout: 6000,
-      responsive: {
-          0: {
-              items: 1,
-              nav: false
-          },
-          768: {
-              items: 2,
-              margin: 8,
-              nav:true
-          }
-      }
-  })
+let people = [
+	{
+		photo:
+			'url("https://cdn.pixabay.com/photo/2018/03/06/22/57/portrait-3204843_960_720.jpg")',
+		name: "Susan Smith",
+		profession: "WEB DEVELOPER",
+		description:
+			"Cheese and biscuits chalk and cheese fromage frais. Cheeseburger caerphilly cheese slices chalk and cheese cheeseburger mascarpone danish fontina rubber cheese. Squirty cheese say cheese manchego jarlsberg lancashire taleggio cheese and wine squirty cheese. Babybel pecorino feta macaroni cheese brie queso everyone loves gouda. Cheese and biscuits camembert de normandie fromage fromage macaroni cheese"
+	},
 
-  $('.reviews-slider').owlCarousel({
-      loop: true,
-      nav: false,
-      dots: true,
-      navText: ['PREV', 'NEXT'],
-      smartSpeed: 1500,
-      items: 1,
-      margin: 24,
-      autoplay: true,
-      autoplayTimeout: 7000,
-  })
-});
+	{
+		photo:
+			"url('https://cdn.pixabay.com/photo/2019/02/11/20/20/woman-3990680_960_720.jpg')",
+		name: "Anna Grey",
+		profession: "UFC FIGHTER",
+		description:
+			"I'm baby migas cornhole hell of etsy tofu, pickled af cardigan pabst. Man braid deep v pour-over, blue bottle art party thundercats vape. Yr waistcoat whatever yuccie, farm-to-table next level PBR&B. Banh mi pinterest palo santo, aesthetic chambray leggings activated charcoal cred hammock kitsch humblebrag typewriter neutra knausgaard. Pabst succulents lo-fi microdosing portland gastropub Banh mi pinterest palo santo"
+	},
 
-jQuery("#carousel").owlCarousel({
-  autoplay: true,
-  rewind: true, /* use rewind if you don't want loop */
-  margin:-5,
-   /*
-  animateOut: 'fadeOut',
-  animateIn: 'fadeIn',
-  */
-  responsiveClass: true,
-  autoHeight: true,
-  autoplayTimeout: 7000,
-  smartSpeed: 800,
-  nav: true,
-  responsive: {
-    0: {
-      items: 1
-    },
+	{
+		photo:
+			"url('https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg')",
+		name: "Branson Cook",
+		profession: "ACTOR",
+		description:
+			"Radio telescope something incredible is waiting to be known billions upon billions Jean-François Champollion hearts of the stars tingling of the spine. Encyclopaedia galactica not a sunrise but a galaxyrise concept of the number one encyclopaedia galactica from which we spring bits of moving fluff. Vastness is bearable only through love paroxysm of global death concept"
+	},
 
-    600: {
-      items: 3
-    },
+	{
+		photo:
+			"url('https://cdn.pixabay.com/photo/2014/10/30/17/32/boy-509488_960_720.jpg')",
+		name: "Julius Grohn",
+		profession: "PROFESSIONAL CHILD",
+		description:
+			"Biscuit chocolate pastry topping lollipop pie. Sugar plum brownie halvah dessert tiramisu tiramisu gummi bears icing cookie. Gummies gummi bears pie apple pie sugar plum jujubes. Oat cake croissant bear claw tootsie roll caramels. Powder ice cream caramels candy tiramisu shortbread macaroon chocolate bar. Sugar plum jelly-o chocolate dragée tart chocolate marzipan cupcake gingerbread."
+	}
+];
 
-    1024: {
-      items: 4
-    },
+imgDiv.style.backgroundImage = people[0].photo;
+personName.innerText = people[0].name;
+profession.innerText = people[0].profession;
+description.innerText = people[0].description;
+let currentPerson = 0;
 
-    1366: {
-      items: 4
-    }
-  }
-});
-$('.navbar-collapse a').click(function() {
-$(".navbar-collapse").collapse('hide');
-});
-// ************************************************************************
-$('#toggle-left-menu').click(function() {
-if ($('#left-menu').hasClass('small-left-menu')) {
-    $('#left-menu').removeClass('small-left-menu');
-} else {
-    $('#left-menu').addClass('small-left-menu');
-}
-$('#logo').toggleClass('small-left-menu');
-$('#page-container').toggleClass('small-left-menu');
-$('#header .header-left').toggleClass('small-left-menu');
+//Select the side where you want to slide
+function slide(whichSide, personNumber) {
+	let reviewWrapWidth = reviewWrap.offsetWidth + "px";
+	let descriptionHeight = description.offsetHeight + "px";
+	//(+ or -)
+	let side1symbol = whichSide === "left" ? "" : "-";
+	let side2symbol = whichSide === "left" ? "-" : "";
 
-$('#logo .big-logo').toggle('300');
-$('#logo .small-logo').toggle('300');
-$('#logo').toggleClass('p-0 pl-1');
-});
+	let tl = gsap.timeline();
 
-$(document).on('mouseover', '#left-menu.small-left-menu > ul > li', function() {
-if (!$(this).hasClass('has-sub')) {
-    var label = $(this).find('span').text();
-    var position = $(this).position();
-    $('#show-lable').css({
-        'top': position.top + 79,
-        'left': position.left + 59,
-        'opacity': 1,
-        'visibility': 'visible'
-    });
+	if (isChickenVisible) {
+		tl.to(chicken, {
+			duration: 0.4,
+			opacity: 0
+		});
+	}
 
-    $('#show-lable').text(label);
-} else {
-    var position = $(this).position();
-    $(this).find('ul').addClass('open');
+	tl.to(reviewWrap, {
+		duration: 0.4,
+		opacity: 0,
+		translateX: `${side1symbol + reviewWrapWidth}`
+	});
 
-    if ($(this).find('ul').hasClass('open')) {
-        const height = 47;
-        var count_submenu_li = $(this).find('ul > li').length;
-        if (position.top >= 580) {
-            var style = {
-                'top': (position.top + 100) - (height * count_submenu_li),
-                'height': height * count_submenu_li + 'px'
-            }
-            $(this).find('ul.open').css(style);
-        } else {
-            var style = {
-                'top': position.top + 79,
-                'height': height * count_submenu_li + 'px'
-            }
+	tl.to(reviewWrap, {
+		duration: 0,
+		translateX: `${side2symbol + reviewWrapWidth}`
+	});
 
-            $(this).find('ul.open').css(style);
-        }
+	setTimeout(() => {
+		imgDiv.style.backgroundImage = people[personNumber].photo;
+	}, 400);
+	setTimeout(() => {
+		description.style.height = descriptionHeight;
+	}, 400);
+	setTimeout(() => {
+		personName.innerText = people[personNumber].name;
+	}, 400);
+	setTimeout(() => {
+		profession.innerText = people[personNumber].profession;
+	}, 400);
+	setTimeout(() => {
+		description.innerText = people[personNumber].description;
+	}, 400);
 
-    }
+	tl.to(reviewWrap, {
+		duration: 0.4,
+		opacity: 1,
+		translateX: 0
+	});
+
+	if (isChickenVisible) {
+		tl.to(chicken, {
+			duration: 0.4,
+			opacity: 1
+		});
+	}
 }
 
-});
+function setNextCardLeft() {
+	if (currentPerson === 3) {
+		currentPerson = 0;
+		slide("left", currentPerson);
+	} else {
+		currentPerson++;
+	}
 
-$(document).on('mouseout', '#left-menu.small-left-menu li a', function(e) {
-$('#show-lable').css({
-    'opacity': 0,
-    'visibility': 'hidden'
-});
-});
-
-$(document).on('mouseout', '#left-menu.small-left-menu li.has-sub', function(e) {
-$(this).find('ul').css({
-    'height': 0,
-});
-});
-
-$(window).resize(function() {
-windowResize();
-});
-
-$(window).on('load', function() {
-windowResize();
-});
-
-$('#left-menu li.has-sub > a').click(function() {
-var _this = $(this).parent();
-
-_this.find('ul').toggleClass('open');
-$(this).closest('li').toggleClass('rotate');
-
-_this.closest('#left-menu').find('.open').not(_this.find('ul')).removeClass('open');
-_this.closest('#left-menu').find('.rotate').not($(this).closest('li')).removeClass('rotate');
-_this.closest('#left-menu').find('ul').css('height', 0);
-
-if (_this.find('ul').hasClass('open')) {
-    const height = 47;
-    var count_submenu_li = _this.find('ul > li').length;
-    _this.find('ul').css('height', height * count_submenu_li + 'px');
+	slide("left", currentPerson);
 }
+
+function setNextCardRight() {
+	if (currentPerson === 0) {
+		currentPerson = 3;
+		slide("right", currentPerson);
+	} else {
+		currentPerson--;
+	}
+
+	slide("right", currentPerson);
+}
+
+leftArrow.addEventListener("click", setNextCardLeft);
+rightArrow.addEventListener("click", setNextCardRight);
+
+surpriseMeBtn.addEventListener("click", () => {
+	if (chicken.style.opacity === "0") {
+		chicken.style.opacity = "1";
+		imgDiv.classList.add("move-head");
+		surpriseMeBtn.innerText = "Remove the chicken";
+		surpriseMeBtn.classList.remove("surprise-me-btn");
+		surpriseMeBtn.classList.add("hide-chicken-btn");
+		isChickenVisible = true;
+	} else if (chicken.style.opacity === "1") {
+		chicken.style.opacity = "0";
+		imgDiv.classList.remove("move-head");
+		surpriseMeBtn.innerText = "Surprise me";
+		surpriseMeBtn.classList.add("surprise-me-btn");
+		surpriseMeBtn.classList.remove("hide-chicken-btn");
+		isChickenVisible = false;
+	}
 });
 
-
-function windowResize() {
-var width = $(window).width();
-if (width <= 992) {
-    $('#left-menu').addClass('small-left-menu');
-    $('#logo').addClass('small-left-menu p-0 pl-1');
-} else {
-    $('#left-menu').removeClass('small-left-menu');
-    $('#logo').removeClass('small-left-menu p-0 pl-1');
-}
-}
-$("#modify-cols-btn").attr("disabled",true);
-
-
-
-
-
-
-
+window.addEventListener("resize", () => {
+	description.style.height = "100%";
+});
