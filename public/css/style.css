@@ -282,7 +282,8 @@ section {
 }
 
 .navbar-brand .dot {
-    color: var(--brand);
+    /* color:#d2384c; */
+    color: rgba(210,56,76, 0.85);
 }
 
 .btn {
