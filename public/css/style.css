@@ -1,54 +1,3 @@
-/* body{
-    font-family: arial;
-    font-size: 16px;
-    margin: 0;
-    background-color: lightseagreen;
-    color: #fff;
-    
-}
-.output-row{
-    margin-bottom: 30px;
-    text-align: center;
-    color: black;
-}
-
-.label-decoration{
-    text-align:left;
-    color: black;
-
-}
-
-.input-container{
-    width: 600px;
-    background-color: #fff;
-    padding: 30px;
-}
-.input-container,.input-row{
-    margin-bottom: 30px;
-    padding-left: 80px;
-}
-
-.text-center{
-    text-align: center;
-    font-style: Bold;
-    color: black;
-}
-.navbar
-{
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-     align-items: center;
-    justify-content: space-between;
-     padding-top: 0.5rem;
-    padding-bottom: 00.5rem;
-}
-.input-container-viewsPage{
-    width: 600px;
-    background-color: #fff;
-    padding: 30px;
-    color: black;
-} */
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap');
 
 :root {
@@ -799,6 +748,7 @@ input.form-control {
         {
             display: block;
         }
+      
     }
       @media (min-width: 576px) {
         #myModal img {
@@ -859,6 +809,7 @@ input.form-control {
         .backbtn{
             display: none;
         }
+        
       
 
         .modalcard{
@@ -878,6 +829,233 @@ input.form-control {
         }
       
     }
-  
+    /* ******************************************************************************************** */
+     .list-group{
+            margin-bottom:0 !important;
+        }    
         
+        
+        .btn-default, .btn-default:hover, .btn-default:active, .razorpay-payment-button{
+            background-color:#00aeef !important;
+            color: #fff !important;
+        }
+        
+        .col-centered {
+            float: none;
+            margin: 0 auto;
+        }
+        
+        
+        .testimonials .col-center {
+            margin: 0 auto;
+            float: none !important;
+        }
+        
+        .testimonials .carousel, .testimonials .carousel-inner{
+            height: auto !important;
+            overflow-y:hidden;
+        }
+        
+        .testimonials .carousel {
+            margin: 50px auto;
+            padding: 0 70px;
+        }
+        .testimonials .carousel .item {
+            color: #999;
+            font-size: 14px;
+            text-align: center;
+            overflow: hidden; 
+        }
+        .testimonials .carousel .item .img-box {
+            width: 135px;
+            height: 135px;
+            margin: 0 auto;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+        }
+        .testimonials .carousel .item .img-box img {
+            width: 100%;
+            height: 100% !important;
+            display: block;
+            border-radius: 50%;
+        }
+        .testimonials .carousel .testimonial {
+            padding: 30px 0 10px;
+        }
+        .testimonials .carousel .overview { 
+            font-style: italic;
+        }
+        .testimonials .carousel .overview b {
+            text-transform: uppercase;
+            color: #7AA641;
+        }
+        .testimonials .carousel .carousel-control {
+            height: 40px;
+            margin-top: -20px;
+            top: 50%;
+            background: none;
+        }
+        .testimonials .carousel-control i {
+            font-size: 68px;
+            line-height: 42px;
+            position: absolute;
+            display: inline-block;
+            color: rgba(0, 0, 0, 0.8);
+            text-shadow: 0 3px 3px #e6e6e6, 0 0 0 #000;
+        }
+        .testimonials .carousel .carousel-indicators {
+            bottom: -40px;
+        }
+        .testimonials .carousel-indicators li, .carousel-indicators li.active {
+            width: 10px;
+            height: 10px;
+            margin: 1px 3px;
+            border-radius: 50%;
+        }
+        .testimonials .carousel-indicators li { 
+            background: #999;
+            border-color: transparent;
+            box-shadow: inset 0 2px 1px rgba(0,0,0,0.2);
+        }
+        .testimonials .carousel-indicators li.active {  
+            background: #555;       
+            box-shadow: inset 0 2px 1px rgba(0,0,0,0.2);
+        }
+        
+            #chatwithusopt{
+                display:none;
+            }
+            
+            #sharewithothersbtn{
+                display:none;
+            }
+            
+        #countdowntimerfield{
+            font-size:30px;   
+        }
+        
+  .carousel-control.left, .carousel-control.right{
+    background-image: none !important;
+}
+
+.comment-bubble{
+    /* background-color: #00aeef; */
+    background: linear-gradient(rgba(210,56,76, 0.85), rgba(56, 161, 210, 0.85));
+
+    font-size: 16px; 
+    border-radius: 20px; 
+    color:#fff; 
+    padding: 20px;
+}
+
+.comment-bubble-right:after {
+    content: '';
+    border: 20px solid transparent;
+    border-right-color: #00aeef;
+    border-left: 0;
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    margin-top: -20px;
+  }
+  
+.comment-bubble-left:after {
+    content: '';
+    border: 20px solid transparent;
+    border-left-color: #00aeef;
+    border-right: 0;
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    margin-top: -20px; 
+  }  
+
+
+ .expert-testimonial-small, .eventsgallery-small{
+     display:none;
+ }
+ 
+ .expert-testimonial-large, .eventsgallery-large{
+     display: block;
+ }
+
+
+  .eventsgallery h4{
+ min-height:80px;   
+ overflow:hidden;
+ font-weight:bold;
+ background-color:#fff;
+ padding: 10px;
+ margin-top: 0px;
+}
+.img-circle{
+    border-radius: 50%;
+}
+ 
+ @media(max-width: 770px){
+     .expert-testimonial-small{
+         display: block;
+         border-radius: 50%;
+     }
+     
+     .expert-testimonial-large{
+         display:none;
+       
+     }
+     
+    .expert-testimonial-small .img-circle{
+        margin: auto;
+        max-width: 250px;
+        
+    }
+
+    .comment-bubble{
+        background-color: transparent; 
+        font-size: 16px; 
+        border-radius: 20px; 
+        color:#000; 
+        padding: 10px;
+        border: 2px solid #666;
+    }
+
+ }
+
+ @media(max-width: 480px){
+    .expert-testimonial-small .img-circle{
+        margin: auto;
+        max-width: 200px;
+        margin-bottom: 15px;
+        
+    }
+    
+    .eventsgallery-large{
+        display:none;
+    }
+    
+    .eventsgallery-small{
+        display: block;
+    }
+    .eventsgallery h4{
+         min-height:60px;   
+    }
+ }   
+
+.testimonial-large{
+    display:block;
+}
+
+.testimonial-small{
+    display: none;
+}
+
+  @media(max-width:480px){
+    .testimonial-large{
+        display: none;
+    }
+    
+    .testimonial-small{
+        display:block;
+    }
+  }
     
