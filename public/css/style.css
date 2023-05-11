@@ -733,14 +733,16 @@ input.form-control {
     
       /* Mobile */
       @media (max-width: 576px) {
+        .textSize{
+            font-size: 17px;
+        }
         .carousel-inner {
           padding: 1em;
         }
         #mobilesyllabus
         {
             display: none;
-        }
-        
+        }        
         #coursecontent{
             padding:0 25px !important;
         }
@@ -751,13 +753,19 @@ input.form-control {
       
     }
       @media (min-width: 576px) {
+        .textSize{
+            font-size: 15px;
+        }
         #myModal img {
             /* width:159.66px ; */
             height:89.88px;
            
         }
-        #myModal h5 {
+        #myModal h5{
             font-size:17px ;
+        }
+        #myModal .cardrespossive{
+            height: 210px;
         }
 
         .card{
@@ -842,6 +850,7 @@ input.form-control {
         
         .col-centered {
             float: none;
+            
             margin: 0 auto;
         }
         
