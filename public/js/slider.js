@@ -242,7 +242,7 @@ for (let index = 0; index < myArray.length; index++) {
 $('#onedata').html(sum)
 $('#oneitem').html(sum)
 
-// card title name adjust
+
 
 
 
