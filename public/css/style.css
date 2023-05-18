@@ -251,7 +251,22 @@ section {
     border-color: #d2384c;
     color: #fff;
 }
-
+.coursebtn{
+    
+    background-color: #f1f3f5;
+}
+.coursebtn:hover{
+    border-color: var(--brand);
+}
+.coursebtn2{
+    background-color:rgba(35, 90, 104, 0.9) ;
+    color: #fff;
+}
+.coursebtn2:hover {
+    background-color: rgba(35, 90, 104, 0.9);
+    border-color: #fff;
+    color: #fff;
+}
 .intro {margin-bottom: 36px;
 text-align: center;}
 
@@ -759,6 +774,9 @@ input.form-control {
         #myModal h5 {
             font-size:17px ;
         }
+        /* #myModal .desktopPadding{
+            padding-left:100px;
+        } */
 
         .card{
             margin:0.5em;
@@ -829,6 +847,20 @@ input.form-control {
         }
       
     }
+    @media (min-width: 1000px) {
+        #myModal .desktopPadding {
+           padding-left: 92px;
+        }
+    }
+    @media (min-width: 576px) and (max-width: 1000px) {
+       #myModal .cardrespossive{
+        width: 170px;
+        }
+        #myModal .desktopPadding {
+            padding-left: 80px;
+         }
+    }
+    
     /* ******************************************************************************************** */
      .list-group{
             margin-bottom:0 !important;
