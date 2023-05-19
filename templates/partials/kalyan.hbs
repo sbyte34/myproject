@@ -11,7 +11,7 @@
     </div>
 
 
-    <div class="container">
+    {{!-- <div class="container">
         <div class="row">
             {{#each kyn_branch}}
             <div class="col-md-4 my-1">
@@ -19,25 +19,43 @@
                     <div class="card-body">
                         <h5 class=""> {{this.branch_name}}</h5>
                         <p class="">{{this.description}}</p>
-
-
                         <p class="">{{this.address}}</p>
                         <span style="font-size:20px; text-align:right;">
                             <h6><a class="backbtn" href="/#branch" style="text-decoration:none;">
                             <img src="static/image/backbutton.png" style="height:15px; width:15px; left:1px">Back</a>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                           
-                            <a href="{{this.link}}" style="text-decoration:none;">Google Map</a></h6>
+                           <a href="{{this.link}}" style="text-decoration:none;">Google Map</a></h6>
                         </span>
 
                     </div>
                 </div>
             </div>
             {{/each}}
+        </div>
+    </div> --}}
+    <div class="container" id="Branchbox">
+        <div class="row">
+            {{#each kyn_branch}}
+            <div class="col-md-4 my-1">
+                <div class="card bcol branchcard">
+                    <div class="contanier boximgBranch">
+                        <img src="static/image/locationImg.png">
+                    </div>
+                    <div class="card-body">
+                        <h5 class=""> {{this.branch_name}}</h5>
+                        {{!-- <p class="">{{this.description}}</p> --}}
+                         <p class="">{{this.address}}</p>
 
-
-
+                        <span style="font-size:20px; text-align:right;">
+                            <h6>
+                                {{!-- <a href="{{this.link}}" style="text-decoration:none;">Learn More</a> --}}
+                                <a href="{{this.link}}" target="_blank" class="btn btn-primary mb-1 mt-1 ">Google Map</a>
+                            </h6>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
         </div>
     </div>
-
 </section>

@@ -1,16 +1,43 @@
-<section class="bg-light brachDec" id="branch">
+<section class="bg-light kalyanPage" id="branch">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="intro">
-                    <h6>Thane</h6>
+                    {{!-- <h6>Thane</h6> --}}
                     <h1>Thane</h1>
                     {{!-- <p class="mx-auto">Description</p> --}}
                 </div>
             </div>
         </div>
     </div>
-     <div class="container">
+      <div class="container" id="Branchbox">
+        <div class="row">
+            {{#each thane_branch}}
+            <div class="col-md-4 my-1">
+                <div class="card bcol branchcard">
+                    <div class="contanier boximgBranch">
+                        <img src="static/image/locationImg.png">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="">{{this.branch_name}}</h5>
+                        {{!-- <p class="">{{this.description}}</p> --}}
+                         <p class="">{{this.address}}</p>
+
+                        <span style="font-size:20px; text-align:right;">
+                            <h6>
+                                {{!-- <a href="{{this.link}}" style="text-decoration:none;">Learn More</a> --}}
+                                <a href="{{this.link}}" target="_blank" class="btn btn-primary mb-1 mt-1 ">Google Map</a>
+                            </h6>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</section>
+
+     {{!-- <div class="container">
         <div class="row">
             {{#each thane_branch}}
             <div class="col-md-4 my-1">
@@ -33,8 +60,5 @@
                 </div>
             </div>
             {{/each}}
-
-
-
         </div>
-    </div>
+    </div> --}}
