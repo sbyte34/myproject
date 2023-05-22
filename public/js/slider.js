@@ -242,6 +242,16 @@ for (let index = 0; index < myArray.length; index++) {
 $('#onedata').html(sum)
 $('#oneitem').html(sum)
 
+function phonumber() {
+  var input =document.getElementById("cno2,cno"),
+      value = input.val(),
+      length = value.length,
+      inputCharacter = parseInt(value.slice(-1));
+
+  if (!((length > 1 && inputCharacter >= 0 && inputCharacter <= 9) || (length === 1 && inputCharacter >= 7 && inputCharacter <= 9))) {
+      $input.val(value.substring(0, length - 1));
+   }
+}
 
 
 
