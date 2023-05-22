@@ -555,7 +555,7 @@ text-align: center;}
 }
 
 footer {
-    background: linear-gradient(0deg, rgba(46,49,146, 0.9), rgba(56, 149, 210, 0.9)), url(/static/image/bg_banner1.jpg), #082032;;
+    background: linear-gradient(0deg, rgba(46,49,146, 0.9), rgba(56, 149, 210, 0.9)), url(/static/image/footerbgImg.png), #082032;;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
