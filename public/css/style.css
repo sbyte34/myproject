@@ -70,23 +70,23 @@ h1,h2,h3,h4,h5,h6,
     color: var(--dark);
 }
 
-.bg-cover {
+.bg-cover{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-img {
+img{
     width: 100%;
 }
 
-a {
+a{
     color: var(--dark);
     transition: all 0.4s ease;
     font-weight: 500;
 }
 
-a:hover {
+a:hover{
     color: var(--brand);
 }
 
@@ -631,6 +631,9 @@ input.form-control {
     font-size:30px;
 	box-shadow: 2px 2px 3px #999;
   z-index:100;
+}
+.float:hover{
+    color: #2c2c2c;
 }
 
 .my-float{
